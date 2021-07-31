@@ -10,7 +10,7 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
       - name: step two
-        run: "Get-ChildItem Env: | Sort-Object Name"
+        run: date
       - name: step three
         run: cat Readme.md
   job2:
@@ -20,7 +20,7 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
       - name: step two
-        run: env | sort
+        run: date
   job3:
     name: macos job
     runs-on: macos-latest
@@ -28,7 +28,7 @@ jobs:
       - name: step one
         uses: actions/checkout@v2
       - name: step two
-        run: env | sort
+        run: date
   job4:
     name: dependencies job
     needs: [job1, job2, job3]
