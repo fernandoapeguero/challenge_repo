@@ -7,30 +7,30 @@ jobs:
     name: windows job
     runs-on: windows-latest
     steps:
-    - name: step one
-      uses: actions/checkout@v2
-    - name: step two
-      run: "Get-ChildItem Env: | Sort-Object Name"
+      - name: step one
+        uses: actions/checkout@v2
+      - name: step two
+        run: "Get-ChildItem Env: | Sort-Object Name"
   job2:
     name: ubuntu job
     runs-on: ubuntu-latest
     steps:
-    - name: step one
-      uses: actions/checkout@v2
-    - name: step two
-      run: env | sort
+      - name: step one
+        uses: actions/checkout@v2
+      - name: step two
+        run: env | sort
   job3:
     name: macos job
     runs-on: macos-lastest
     steps:
-    - name: step one
-      uses: actions/checkout@v2
-    - name: step two
-      run: env | sort
+      - name: step one
+        uses: actions/checkout@v2
+      - name: step two
+        run: env | sort
   job4:
     name: dependencies job
     needs: [job1, job2, job3]
     runs-on: ubuntu-latest
     steps:
-    - name: Run a one-line script
+      - name: Run a one-line script
         run: echo Hello, world!
